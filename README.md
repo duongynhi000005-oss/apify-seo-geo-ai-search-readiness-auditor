@@ -1,6 +1,6 @@
 # Technical SEO, Schema.org & AI Search (GEO / llms.txt) Auditor
 
-Audits websites for both traditional Google SEO and Generative Engine Optimization (GEO / AI Search: ChatGPT Search, Perplexity, Claude, Gemini). Checks Title, Meta, Canonical, H1/H2 hierarchy, missing image alt tags, Schema.org JSON-LD types, sitemap.xml, /llms.txt, and robots.txt AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot).
+Audits websites for Google SEO and AI Search (GEO: ChatGPT, Perplexity, Claude). Checks Title, Meta, Canonical, H1/H2, Schema.org JSON-LD, sitemap.xml, /llms.txt, and robots.txt AI crawler rules (GPTBot, ClaudeBot, PerplexityBot).
 
 ## Why Use Technical SEO, Schema.org & AI Search (GEO / llms.txt) Auditor?
 - **Production-Grade & Zero Maintenance**: Built specifically for automated workflows in **n8n, Make.com, Zapier, Clay, LangChain, and MCP servers**.
