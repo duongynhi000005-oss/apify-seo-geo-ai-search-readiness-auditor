@@ -1,0 +1,101 @@
+{
+  "actorSpecification": 1,
+  "name": "seo-geo-ai-search-readiness-auditor",
+  "title": "Technical SEO, Schema.org & AI Search (GEO / llms.txt) Auditor",
+  "description": "Audits websites for both traditional Google SEO and Generative Engine Optimization (GEO / AI Search: ChatGPT Search, Perplexity, Claude, Gemini). Checks Title, Meta, Canonical, H1/H2 hierarchy, missing image alt tags, Schema.org JSON-LD types, sitemap.xml, /llms.txt, and robots.txt AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot).",
+  "version": "1.0",
+  "meta": {
+    "templateId": "js-start"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Technical SEO, Schema.org & AI Search (GEO / llms.txt) Auditor Output",
+    "description": "Audits websites for both traditional Google SEO and Generative Engine Optimization (GEO / AI Search: ChatGPT Search, Perplexity, Claude, Gemini). Checks Title, Meta, Canonical, H1/H2 hierarchy, missing image alt tags, Schema.org JSON-LD types, sitemap.xml, /llms.txt, and robots.txt AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot).",
+    "type": "object",
+    "properties": {
+      "results": {
+        "type": "string",
+        "title": "Enriched Dataset Items",
+        "template": "{{links.apiDefaultDatasetUrl}}/items"
+      }
+    }
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Technical SEO, Schema.org & AI Search (GEO / llms.txt) Auditor Dataset",
+      "description": "Audits websites for both traditional Google SEO and Generative Engine Optimization (GEO / AI Search: ChatGPT Search, Perplexity, Claude, Gemini). Checks Title, Meta, Canonical, H1/H2 hierarchy, missing image alt tags, Schema.org JSON-LD types, sitemap.xml, /llms.txt, and robots.txt AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot).",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "domain",
+              "seoAndGeoScore",
+              "hasLlmsTxt",
+              "schemaOrgTypes",
+              "auditIssues"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "domain": {
+                "label": "Domain",
+                "format": "text"
+              },
+              "seoAndGeoScore": {
+                "label": "SEO + GEO Score (0-100)",
+                "format": "text"
+              },
+              "hasLlmsTxt": {
+                "label": "Has /llms.txt",
+                "format": "text"
+              },
+              "schemaOrgTypes": {
+                "label": "Schema.org Types",
+                "format": "text"
+              },
+              "auditIssues": {
+                "label": "Detected Audit Issues",
+                "format": "text"
+              }
+            }
+          }
+        }
+      },
+      "fields": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "Domain",
+            "description": "Domain"
+          },
+          "seoAndGeoScore": {
+            "type": "integer",
+            "title": "SEO + GEO Score (0-100)",
+            "description": "SEO + GEO Score (0-100)"
+          },
+          "hasLlmsTxt": {
+            "type": "boolean",
+            "title": "Has /llms.txt",
+            "description": "Has /llms.txt"
+          },
+          "schemaOrgTypes": {
+            "type": "array",
+            "title": "Schema.org Types",
+            "description": "Schema.org Types"
+          },
+          "auditIssues": {
+            "type": "array",
+            "title": "Detected Audit Issues",
+            "description": "Detected Audit Issues"
+          }
+        }
+      }
+    }
+  }
+}
