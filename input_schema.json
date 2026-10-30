@@ -1,0 +1,23 @@
+{
+  "title": "Technical SEO & AI Search (GEO / llms.txt) Auditor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Website URLs to Audit",
+      "type": "array",
+      "description": "List of domains or webpage URLs to audit for Technical SEO and AI Search readiness.",
+      "editor": "requestListSources",
+      "default": [
+        {
+          "url": "https://apify.com"
+        }
+      ],
+      "prefill": [
+        {
+          "url": "https://apify.com"
+        }
+      ]
+    }
+  }
+}
